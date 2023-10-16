@@ -2,14 +2,15 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Empleado;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\empleado>
  */
 class empleadoFactory extends Factory
 {
+
     protected $model = Empleado::class;
 
     /**
@@ -20,13 +21,13 @@ class empleadoFactory extends Factory
     public function definition(): array
     {
         return [
-            'phone' => $this->faker->phoneNumber(),
+            'phone' => $this->faker->randomDigit(10),
             'name' => $this->faker->name(),
             'email' => $this->faker->email(),
-            'eps' => $this->faker->name(),
-            'stateSubsidy' => $this->faker->name(),
+            'eps' => $this->faker->randomElement(['Sura', 'AsmetSalud', 'ColSalud', 'FlorezSalud']),
+            'stateSubsidy' => $this->faker->randomDigit(),
             'confirmationDate' => $this->faker->date(),
-            'legalizationDate' => $this->faker->randomElement(['Sura', 'AsmetSalud', 'ColSalud', 'FlorezSalud']),
+            'legalizationDate' => $this->faker->date(),
         ];
     }
 }
