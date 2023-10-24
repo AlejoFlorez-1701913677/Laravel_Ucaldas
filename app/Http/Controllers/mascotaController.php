@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mascota;
 use Illuminate\Http\Request;
+use App\Http\Requests\MascotaRequest;
 
 class mascotaController extends Controller
 {
@@ -28,10 +29,10 @@ class mascotaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(MascotaRequest $request)
     {
         Mascota::create($request->all());
-        return redirect('/Mascotas');
+        return redirect('/Mascota');
     }
 
     /**
@@ -45,21 +46,16 @@ class mascotaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Mascota $mascota)
     {
-        $mascota = Mascota::find($id);
-
-        return view('Mascota.edit', compact('mascota'));
+        return view('Mascota.edit', ['mascota' => $mascota]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(MascotaRequest $request, Mascota $mascota)
     {
-        $request->validate([]);
-
-        $mascota = Mascota::find($id);
         $mascota->update($request->all());
 
         return redirect()->route('Mascota.index')->with('success', 'Mascota actualizada con éxito.');
@@ -73,6 +69,6 @@ class mascotaController extends Controller
         $mascota = Mascota::find($id);
         $mascota->delete();
 
-        return redirect()->route('empleados.index')->with('success', 'Mascota eliminada con éxito.');
+        return redirect()->route('Mascota.index')->with('success', 'Mascota eliminada con éxito.');
     }
 }
