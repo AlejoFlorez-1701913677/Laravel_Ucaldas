@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource(
+    'Mascota',
+    App\Http\Controllers\mascotaController::class
+);
