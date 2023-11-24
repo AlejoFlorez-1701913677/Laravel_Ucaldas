@@ -1,0 +1,13 @@
+.titleProduct {
+    min-height: 10vh;
+}
+
+.descriptionProduct {
+    padding-top: 5%;
+    font-size: 0.8rem;
+    min-height: 14vh;
+}
+
+.price-text-color {
+    color: #ffc107;
+}

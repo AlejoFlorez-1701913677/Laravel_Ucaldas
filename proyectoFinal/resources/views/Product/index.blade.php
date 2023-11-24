@@ -1,57 +1,67 @@
 @extends('layout.index')
 @section('content') {{-- @yield('content') --}}
 
-<div class="container">
+<link rel="stylesheet" href="{{ asset('assets/css/Product/index.css') }}">
+
+<div class="container-fluid">
 
     <br>
     <br>
-    
-
-    <div>
-
-      <form method="GET" action="{{route("Product.index")}}">
-        <div class="input-group">
-          <div class="col-4">
-            <select name="pet_column" class="form-select">
-              <option value="name">Nombre</option>
-              <option value="owner">Dueño</option>
-              <option value="race">Raza</option>
-            </select>
-          </div>
-          <div class="col-6">
-            <input type="search" name="pet_Search" class="form-control rounded" placeholder="Buscar Producto" aria-label="Search" aria-describedby="search-addon" />
-          </div>
-          <div class="col-2">
-            <a href="{{ route('Product.index') }}">
-              <button type="button" class="btn btn-outline-primary">Buscar</button>
-          </a>
-          </div>
-            
-        </div>
-      </form>
-
-    </div>
-
-    <br>
-    <br>
-    
 
     <div class="row">
+
         @foreach ($Products as $Product)
         
         <div class="col-lg-3 mb-4 d-flex align-items-stretch">
             <div class="card">
-              <img src="https://cdn-icons-png.flaticon.com/512/6462/6462524.png" class="card-img-top" alt="Card Image">
+              <img src="https://cdn-icons-png.flaticon.com/256/4129/4129528.png" class="card-img-top" alt="Card Image">
               <div class="card-body d-flex flex-column">
-                <h3 class="card-title"><strong>Nombre:</strong><br> {{ $Product->name }}</h3>
-                <p class="card-text"><strong>Dueño</strong> {{ $Product->owner }}</p>
-                <p class="card-text"><strong>Raza</strong> {{ $Product->race }}</p>
-                <p class="card-text"><strong>Medidas</strong> {{ $Product->weight }} x {{ $Product->height }} x {{ $Product->width }}</p>
-                <p class="card-text"><strong>Nacimiento</strong> {{ $Product->birthday }}</p>
-                <p class="card-text"><strong>Última Vacunación</strong> {{ $Product->lastVaccination ?: 'Sin fecha'}}</p>
-                
-                
-                <a href="{{route('Product.edit', $Product)}}" class="btn btn-primary">Editar</a>
+
+                <h5 class="card-title titleProduct">{{ $Product->title }}</h5>
+               
+                <div class="col-12">
+                  
+                  <div class="price col-6 float-start">
+                    <h5>$ {{ $Product->price }}</h5>
+                  </div>
+
+                  <div class="rating hidden-sm col-6 float-start">
+                      <i class="price-text-color fa fa-star"></i>
+                      <i class="price-text-color fa fa-star"></i>
+                      <i class="price-text-color fa fa-star"></i>
+                      <i class="price-text-color fa fa-star"></i>
+                      <i class="price-text-color fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="col-12">
+                  <p class="fw-light descriptionProduct">{{ $Product->description }}</p>
+                </div>
+
+                <div class="col-12">
+
+                  <div class="col-3 float-start">
+                    <p class="btn-add">
+                      <button class="btn btn-success col-12"><i class="fa fa-shopping-cart"></i></button>
+                    </p>
+                  </div>
+                  
+                  <div class="col-3 float-start">
+                    <button class="btn text-info col-12"><i class="fa fa-eye"></i></button>
+                  </div>
+                  
+                  <div class="col-3 float-start">
+                    <button class="btn text-warning col-12"><i class="fa fa-edit"></i></button>
+                  </div>
+                  
+                  <div class="col-3 float-start">
+                    <button class="btn text-danger col-12"><i class="fa fa-trash"></i></button>
+                  </div>
+
+                </div>
+
+                <!--<a href="{{route('Product.edit', $Product)}}" class="btn btn-primary">Editar</a>
                 
                 <form 
                   action="{{route('Product.destroy', $Product)}}" 
@@ -60,7 +70,7 @@
                   @csrf
                   @method('DELETE')
                   <button type="submit" class="btn btn-danger">Eliminar <i class="fa-solid fa-trash"></i></button>
-                </form>
+                </form>-->
                 
               </div>
             </div>

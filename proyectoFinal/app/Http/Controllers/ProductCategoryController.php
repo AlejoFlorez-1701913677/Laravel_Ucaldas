@@ -15,7 +15,7 @@ class ProductCategoryController extends Controller
     {
         $ProductCategory = ProductCategory::all();
         return view('ProductCategory.index', [
-            'ProductCategorys' => $ProductCategory
+            'ProductCategory' => $ProductCategory
         ]);
     }
 

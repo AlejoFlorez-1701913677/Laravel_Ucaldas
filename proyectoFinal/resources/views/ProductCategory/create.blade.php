@@ -1,0 +1,1 @@
+resources/views/ProductCategory/create.blade.php
