@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('layouts.index')
 @section('content') {{-- @yield('content') --}}
 
 <link rel="stylesheet" href="{{ asset('assets/css/Product/index.css') }}">
