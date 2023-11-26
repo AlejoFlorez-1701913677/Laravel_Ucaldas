@@ -11,6 +11,8 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="{{ asset('assets/css/welcome.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -23,112 +25,144 @@
 
         @include('layouts.navbar')
 
-        <div id="wel_slider1" class="py-20" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)">
+        <div id="wel_slider1" class="py-20" style="background: linear-gradient(90deg, #2BA8D9 0%, #89A64B 100%)">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold mb-2 text-white">
-                    En UpsCloud podrás encontrar todo lo que estas buscando
+                    En Macconndo podrás encontrar todo lo que estas buscando
                 </h2>
                 <h3 class="text-2xl mb-8 text-gray-200">
-                    Conectate con las personas que requieren tus productos
+                    Disfruta de nuestros especiales y todos nuestros productos a ún modico precio
                 </h3>
-                <a href="{{ route('register') }}">
-                    <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">
-                        Registrarse
+                <a href="{{ route('product') }}">
+                    <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider btnStandardMacconndo">
+                        Ver Productos
                     </button>
                 </a>
                 
             </div>
         </div>
 
-        <section class="container mx-auto px-6 p-10">
-          <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
-            Ventajas
-          </h2>
-          
-          <div class="flex items-center flex-wrap mb-20">
-            <div class="w-full md:w-1/2">
-              <h4 class="text-3xl text-gray-800 font-bold mb-3">
-                Gran cantidad de productos
-              </h4>
-              
-              <p class="text-gray-600 mb-8">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur obcaecati quas distinctio ipsum sint adipisci reprehenderit, 
-                  suscipit id, vel temporibus, aspernatur accusamus libero. Laboriosam, facilis! Illum rem adipisci magni excepturi?
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, odio molestiae cumque tenetur hic fugit, soluta voluptas dolorem accusamus corporis labore nobis repellat saepe dignissimos aspernatur ea voluptatum fugiat quas.
-              </p>
-            </div>
-            
-            <div class="w-full md:w-1/2">
-              <img
-                class="wel_imgBase"
-                src="https://cdn-icons-png.flaticon.com/256/2674/2674505.png"
-                alt="Monitoring"/>
-            </div>
+        <section id="about">
+          <div>
+            <h2 class="title-text">Categorias</h2>
           </div>
-          
-          <div class="flex items-center flex-wrap mb-20">
-            <div class="w-full md:w-1/2">
-              <img
-                class="wel_imgBase"
-                src="https://cdn-icons-png.flaticon.com/256/2782/2782163.png"
-                alt="Reporting"/>
-            </div>
-            
-            <div class="w-full md:w-1/2 pl-10">
-              <h4 class="text-3xl text-gray-800 font-bold mb-3">
-                Reportes
-              </h4>
-              
-              <p class="text-gray-600 mb-8">
-                Our Smart Health Monitoring Wristwatch can generate a comprehensive
-                report on your vitals depending on your settings either daily,
-                weekly, monthly, quarterly or yearly.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae facilis provident in mollitia nam. Omnis enim consectetur possimus, fuga cumque, nostrum iste a officiis temporibus officia dignissimos magnam? Iste, odit.
-              </p>
-            </div>
-          </div>
-          
-          <div class="flex items-center flex-wrap mb-20">
-            <div class="w-full md:w-1/2">
-              <h4 class="text-3xl text-gray-800 font-bold mb-3">
-                Siempre en linea
-              </h4>
-              
-              <p class="text-gray-600 mb-8">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est reiciendis tenetur minima
-                Lorem ipsum dolor sit amet consecteturLorem ipsum dolor sit amet consectetur tenetur minima
-                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
-                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet tenetur minima
-                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur
-              </p>
-            
-            </div>
-            
-            <div class="w-full md:w-1/2">
-              <img
-                class="wel_imgBase"
-                src="https://cdn-icons-png.flaticon.com/256/3649/3649281.png"
-                alt="Syncing"/>
-            </div>
-          </div>
+
+          <div class="about-center">
+            <!---Single item-->
+            <article class="about">
+              <a href="{{ url('/product') }}">
+              <div class="about-icon"><i class="fas fa-mug-hot"></i></div>
+              <div class="about-text">
+                  <h2 class="about-subtitle">Drinks</h2>
+                  <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
+                  adipisicing elit. Quisquam, temporibus!</p>
+              </div>
+            </a>
+          </article>
+            <!---Single item-->
+            <article class="about">
+              <a href="{{ url('/product') }}">
+              <div class="about-icon"><i class="fas fa-mug-hot"></i></div>
+              <div class="about-text">
+                  <h2 class="about-subtitle">Drinks</h2>
+                  <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
+                  adipisicing elit. Quisquam, temporibus!</p>
+              </div>
+            </a>
+          </article>
+            <!---Single item-->
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-mug-hot"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Drinks</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
+                    adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <!--End of single item-->
+            <!---Single item-->
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-utensils"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Healthy Food</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
+                    adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <!--End of single item-->
+            <!---Single item-->
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-mortar-pestle"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Organic Food</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
+                    adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <!--End of single item-->
+            <!---Single item-->
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-drumstick-bite"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">White Meat</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
+                    adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <!--End of single item-->
+            <!---Single item-->
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-fish"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Sea Food</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
+                    adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <!--End of single item-->
+            <!---Single item-->
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-pepper-hot "></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Hot & Spicy</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
+                    adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <!--End of single item-->
+          </div>   
         </section>
 
+        <section class="menu" id="menu">
+          <article class="menu-image"></article>
+          <article class="menu-text">
+              <div class="menu-text-center">
+                  <h1>Nuestros Productos</h1>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing 
+                   elit. Aut omnis nam iusto praesentium inventore vitae 
+                   esse tempora repellendus.</p>
+                   <a href="{{ url('/product') }}">Ver Productos</a>
+              </div>
+          </article>
+      </section>
+
+        
         
         <div class="carousel">
             <div class="carousel-inner">
                 <input class="carousel-open invisible" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="hidden" checked="checked">
                 <div class="carousel-item">
-                    <img src="http://fakeimg.pl/2000x800/667eea/fff/?text=Un lugar para comprar">
+                    <img src="http://fakeimg.pl/2000x800/2BA8D9/fff/?text=Un lugar para comer">
                 </div>
 
                 <input class="carousel-open invisible" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="true">
                 <div class="carousel-item">
-                    <img src="http://fakeimg.pl/2000x800/764ba2/fff/?text=Revisa lo último en opciones">
+                    <img src="http://fakeimg.pl/2000x800/89A64B/fff/?text=Disfruta lo último en gastronomia">
                 </div>
 
                 <input class="carousel-open invisible" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="true">
                 <div class="carousel-item">
-                    <img src="http://fakeimg.pl/2000x800/F90/fff/?text=UpsCloud - Ecommerce">
+                    <img src="http://fakeimg.pl/2000x800/D90B1C/fff/?text=Un lugar para compartir">
                 </div>
 
                 <label for="carousel-3" class="carousel-control prev control-1">‹</label>

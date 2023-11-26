@@ -1,13 +1,5 @@
-.titleProduct {
-    min-height: 10vh;
+#pro_container {
+    margin-top: 22vh;
 }
 
-.descriptionProduct {
-    padding-top: 5%;
-    font-size: 0.8rem;
-    min-height: 14vh;
-}
-
-.price-text-color {
-    color: #ffc107;
-}
+.pro_card {}

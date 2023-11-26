@@ -6,14 +6,10 @@
             <div class="flex items-center space-x-4">
                 <!-- logo -->
                 <div>
-                <a href="#" class="flex py-5">
-                    
-                    <svg class="h-6 w-6 text-blue-200" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
-                    </svg>
-                    
-                <span class="font-bold">UpsCloud</span>
-                </a>
+                    <a href="/" class="flex py-5">
+                        
+                        <div id="gen_logo"></div>
+                    </a>
                 </div>
     
                 <!-- primary nav -->
@@ -27,14 +23,14 @@
             <div class="hidden md:flex items-center space-x-1">
             
                 @if (Route::has('login'))
-                    <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                    <div id="gen_secondaryNav" class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                         @auth
-                                <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                                <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 text-white">Dashboard</a>
                             @else
-                                <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Ingresa</a>
+                                <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 text-white">Ingresa</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Crea tu cuenta</a>
+                                <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 text-white">Crea tu cuenta</a>
                             @endif
                         @endauth
                     </div>

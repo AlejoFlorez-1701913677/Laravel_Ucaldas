@@ -1,5 +1,55 @@
-body {
-    /*background-color: #B5EDF5;*/
+body {}
+
+#nav_principal {
+    background-color: black;
+    color: orange;
+    border-bottom-left-radius: 20vh;
+    border-bottom-right-radius: 20vh;
+}
+
+#gen_logo {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 100%;
+    background-color: orange;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../image/Logo.png");
+}
+
+.gen_logoIcon {
+    position: relative;
+    top: -2vh;
+    height: 8vh !important;
+    width: 8vh !important;
+}
+
+.gen_bigLogo {
+    height: 42vh !important;
+    width: 42vh !important;
+}
+
+#gen_secondaryNav {
+    position: relative;
+    top: 2%;
+}
+
+.hover\:text-gray-900:hover {
+    color: white !important;
+}
+
+.btnStandardMacconndo {
+    color: white;
+    font-weight: bold !important;
+    background-color: #89A64B !important;
+}
+
+.color89A64B {
+    color: #89A64B;
+}
+
+.backColor89A64B {
+    background-color: #89A64B;
 }
 
 .card {
@@ -10,4 +60,17 @@ body {
     position: fixed;
     width: 100%;
     z-index: 99;
+    top: 0%;
 }
+
+.pro_price {
+    color: orange;
+    font-weight: bold;
+    padding-left: 35%;
+}
+
+.pro_description {
+    min-height: 28vh;
+}
+
+.pro_options {}
