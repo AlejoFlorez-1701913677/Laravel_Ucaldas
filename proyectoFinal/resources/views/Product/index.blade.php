@@ -44,7 +44,7 @@
                   <div class="flex pro_options pt-6 justify-around	">
 
                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                      <a href="#">
+                      <a href="{{ route('Product.show', $Product->slug) }}">
                         <i class="fa-solid fa-eye"></i>
                       </a>
                     </button>

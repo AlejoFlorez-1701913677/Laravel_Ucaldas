@@ -18,12 +18,13 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'category_id' => ProductCategory::inRandomOrder()->first()->id,
             'title' => $this->faker->sentence(4),
-            'image' => $this->faker->randomElement(['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg']),
-            'price' => $this->faker->randomDigit,
-            'author' => $this->faker->name(),
             'description' => $this->faker->paragraph,
+            'price' => $this->faker->numberBetween($min = 10000, $max = 99999),
+            'available' => $this->faker->boolean(),
+            'image' => $this->faker->randomElement(['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg']),
+            'slug' => $this->faker->unique()->word(),
+            'category_id' => ProductCategory::inRandomOrder()->first()->id,
         ];
     }
 }

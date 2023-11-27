@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProductRequest;
 use App\Models\Product;
-use Illuminate\Http\Request;
+use App\Models\ProductCategory;
+use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      */
@@ -24,7 +26,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('Product.create', []);
+        $ProductCategory = ProductCategory::all();
+        return view('Product.create', [
+            'ProductCategory' => $ProductCategory
+        ]);
     }
 
     /**
@@ -32,6 +37,7 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
+        $request['available'] = $request->has('available');
         Product::create($request->all());
         return redirect('/Product');
     }
@@ -39,9 +45,10 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($slug)
     {
-        //
+        $Product = Product::where('slug', $slug)->firstOrFail();
+        return view('Product.show', compact('Product'));
     }
 
     /**
@@ -49,7 +56,11 @@ class ProductController extends Controller
      */
     public function edit(Product $Product)
     {
-        return view('Product.edit', ['Product' => $Product]);
+        $ProductCategory = ProductCategory::all();
+        return view('Product.edit', [
+            'Product' => $Product,
+            'ProductCategory' => $ProductCategory
+        ]);
     }
 
     /**

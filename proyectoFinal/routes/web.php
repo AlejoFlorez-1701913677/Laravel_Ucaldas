@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\GeneralController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',  [GeneralController::class, 'welcome']);
 
 Route::get(
     '/product',
@@ -29,15 +28,17 @@ Route::get(
     [ProductCategoryController::class, 'index']
 )->name('category');
 
+Route::get('/menu/{slug}', [ProductController::class, 'show'])->name('Product.show');
 
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [GeneralController::class, 'dashboard'])->name('dashboard');
 
+    Route::get('/productDashboard', [GeneralController::class, 'productDashboard'])->name('productDashboard');
+
+    Route::get('/categoryDashboard', [GeneralController::class, 'categoryDashboard'])->name('categoryDashboard');
 
     Route::resource(
         'Product',

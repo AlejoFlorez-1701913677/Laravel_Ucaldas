@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Http\Requests\ProductCategoryRequest;
 use App\Models\ProductCategory;
 

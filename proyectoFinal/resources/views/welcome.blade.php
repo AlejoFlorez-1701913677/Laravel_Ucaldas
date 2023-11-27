@@ -48,88 +48,24 @@
           </div>
 
           <div class="about-center">
-            <!---Single item-->
-            <article class="about">
-              <a href="{{ url('/product') }}">
-              <div class="about-icon"><i class="fas fa-mug-hot"></i></div>
-              <div class="about-text">
-                  <h2 class="about-subtitle">Drinks</h2>
-                  <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
-                  adipisicing elit. Quisquam, temporibus!</p>
-              </div>
-            </a>
-          </article>
-            <!---Single item-->
-            <article class="about">
-              <a href="{{ url('/product') }}">
-              <div class="about-icon"><i class="fas fa-mug-hot"></i></div>
-              <div class="about-text">
-                  <h2 class="about-subtitle">Drinks</h2>
-                  <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
-                  adipisicing elit. Quisquam, temporibus!</p>
-              </div>
-            </a>
-          </article>
-            <!---Single item-->
-            <article class="about">
-                <div class="about-icon"><i class="fas fa-mug-hot"></i></div>
-                <div class="about-text">
-                    <h2 class="about-subtitle">Drinks</h2>
-                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
-                    adipisicing elit. Quisquam, temporibus!</p>
-                </div>
-            </article>
-            <!--End of single item-->
-            <!---Single item-->
-            <article class="about">
-                <div class="about-icon"><i class="fas fa-utensils"></i></div>
-                <div class="about-text">
-                    <h2 class="about-subtitle">Healthy Food</h2>
-                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
-                    adipisicing elit. Quisquam, temporibus!</p>
-                </div>
-            </article>
-            <!--End of single item-->
-            <!---Single item-->
-            <article class="about">
-                <div class="about-icon"><i class="fas fa-mortar-pestle"></i></div>
-                <div class="about-text">
-                    <h2 class="about-subtitle">Organic Food</h2>
-                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
-                    adipisicing elit. Quisquam, temporibus!</p>
-                </div>
-            </article>
-            <!--End of single item-->
-            <!---Single item-->
-            <article class="about">
-                <div class="about-icon"><i class="fas fa-drumstick-bite"></i></div>
-                <div class="about-text">
-                    <h2 class="about-subtitle">White Meat</h2>
-                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
-                    adipisicing elit. Quisquam, temporibus!</p>
-                </div>
-            </article>
-            <!--End of single item-->
-            <!---Single item-->
-            <article class="about">
-                <div class="about-icon"><i class="fas fa-fish"></i></div>
-                <div class="about-text">
-                    <h2 class="about-subtitle">Sea Food</h2>
-                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
-                    adipisicing elit. Quisquam, temporibus!</p>
-                </div>
-            </article>
-            <!--End of single item-->
-            <!---Single item-->
-            <article class="about">
-                <div class="about-icon"><i class="fas fa-pepper-hot "></i></div>
-                <div class="about-text">
-                    <h2 class="about-subtitle">Hot & Spicy</h2>
-                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur 
-                    adipisicing elit. Quisquam, temporibus!</p>
-                </div>
-            </article>
-            <!--End of single item-->
+
+            @foreach ($ProductCategory as $Product)
+                <!---Single item-->
+                <article class="about">
+                    <a href="{{ url('/product') }}">
+                        <div class="about-icon"><i class="fas {{ $Product->icon }}"></i></div>
+                        <div class="about-text">
+                            <h2 class="about-subtitle">{{ $Product->title }}</h2>
+                            <p class="about-info">
+                                {{ $Product->description }}
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+            @endforeach
+           
+            
           </div>   
         </section>
 

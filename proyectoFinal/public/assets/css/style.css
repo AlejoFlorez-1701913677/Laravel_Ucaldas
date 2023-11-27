@@ -34,6 +34,10 @@ body {}
     top: 2%;
 }
 
+#gen_secondaryNav>a {
+    color: orange;
+}
+
 .hover\:text-gray-900:hover {
     color: white !important;
 }
@@ -49,7 +53,7 @@ body {}
 }
 
 .backColor89A64B {
-    background-color: #89A64B;
+    background-color: #89A64B !important;
 }
 
 .card {
