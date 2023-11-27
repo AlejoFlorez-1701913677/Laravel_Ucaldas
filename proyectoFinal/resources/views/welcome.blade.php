@@ -52,7 +52,7 @@
             @foreach ($ProductCategory as $Product)
                 <!---Single item-->
                 <article class="about">
-                    <a href="{{ url('/product') }}">
+                    <a href="{{ route('ProductCategory.show', $Product->slug) }}">
                         <div class="about-icon"><i class="fas {{ $Product->icon }}"></i></div>
                         <div class="about-text">
                             <h2 class="about-subtitle">{{ $Product->title }}</h2>

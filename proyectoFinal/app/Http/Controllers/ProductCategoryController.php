@@ -32,15 +32,16 @@ class ProductCategoryController extends Controller
     public function store(ProductCategoryRequest $request)
     {
         ProductCategory::create($request->all());
-        return redirect('/ProductCategory');
+        return redirect('/categoryDashboard');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($slug)
     {
-        //
+        $Category = ProductCategory::where('slug', $slug)->firstOrFail();
+        return view('ProductCategory.show', compact('Category'));
     }
 
     /**
@@ -48,7 +49,7 @@ class ProductCategoryController extends Controller
      */
     public function edit(ProductCategory $ProductCategory)
     {
-        return view('ProductCategory.edit', ['ProductCategory' => $ProductCategory]);
+        return view('ProductCategory.edit', ['Category' => $ProductCategory]);
     }
 
     /**
@@ -58,7 +59,7 @@ class ProductCategoryController extends Controller
     {
         $ProductCategory->update($request->all());
 
-        return redirect()->route('ProductCategory.index')->with('success', 'Categoria actualizada con éxito.');
+        return redirect()->route('categoryDashboard')->with('success', 'Categoria actualizada con éxito.');
     }
 
     /**
@@ -69,6 +70,6 @@ class ProductCategoryController extends Controller
         $ProductCategory = ProductCategory::find($id);
         $ProductCategory->delete();
 
-        return redirect()->route('ProductCategory.index')->with('success', 'Categoria eliminado con éxito.');
+        return redirect()->route('categoryDashboard')->with('success', 'Categoria eliminada con éxito.');
     }
 }

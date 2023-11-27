@@ -41,7 +41,7 @@ class GeneralController extends Controller
     {
         $ProductCategory = ProductCategory::all();
 
-        return view('Dashboard.Product', [
+        return view('Dashboard.Category', [
             'Categories' => $ProductCategory,
         ]);
     }

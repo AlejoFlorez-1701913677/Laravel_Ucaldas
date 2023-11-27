@@ -39,7 +39,7 @@ class ProductController extends Controller
     {
         $request['available'] = $request->has('available');
         Product::create($request->all());
-        return redirect('/Product');
+        return redirect('/productDashboard');
     }
 
     /**
@@ -70,7 +70,7 @@ class ProductController extends Controller
     {
         $Product->update($request->all());
 
-        return redirect()->route('Product.index')->with('success', 'Producto actualizado con éxito.');
+        return redirect()->route('productDashboard')->with('success', 'Producto actualizado con éxito.');
     }
 
     /**
@@ -81,6 +81,6 @@ class ProductController extends Controller
         $Product = Product::find($id);
         $Product->delete();
 
-        return redirect()->route('Product.index')->with('success', 'Producto eliminado con éxito.');
+        return redirect()->route('productDashboard')->with('success', 'Producto eliminado con éxito.');
     }
 }

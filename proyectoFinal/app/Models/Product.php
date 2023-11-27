@@ -11,9 +11,6 @@ class Product extends Model
 
     protected $table = "products";
 
-    //const CREATED_AT = null;
-    //const UPDATED_AT = null;
-
     protected $fillable = [
         'title',
         'description',

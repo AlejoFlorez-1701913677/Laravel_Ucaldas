@@ -67,7 +67,17 @@
                                         
                                         <a href="{{ route('Product.show', $Product->slug) }}" target="_blanck" class="text-green-600 hover:text-indigo-900 fas fa-eye"></a>
                                         <a href="{{ route('Product.edit', $Product) }}" class="text-blue-600 hover:text-indigo-900 fas fa-edit"></a>
-                                        <a href="#" class="text-rose-600 hover:text-indigo-900 fas fa-trash"></a>
+                                        
+                                        <form 
+                                            action="{{route('Product.destroy', $Product)}}" 
+                                            method="post"
+                                            onsubmit="return confirm('¿Estás Seguro?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="text-rose-600 hover:text-indigo-900">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
                                         
                                     </td>
                                 </tr>
