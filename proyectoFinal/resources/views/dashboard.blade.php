@@ -39,7 +39,7 @@
                             </div>
                         </a>
 
-                        <a href="{{ route('categoryDashboard') }}" class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
+                        <a href="{{ route('userDashboard') }}" class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
                             <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white">
                                 <div class="p-3 rounded-full bg-pink-600 bg-opacity-75">
                                     <img src="https://cdn-icons-png.flaticon.com/128/1999/1999625.png">

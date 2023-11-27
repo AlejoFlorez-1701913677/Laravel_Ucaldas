@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\GeneralController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::get('/categoryDashboard', [GeneralController::class, 'categoryDashboard'])->name('categoryDashboard');
 
+    Route::get('/userDashboard', [GeneralController::class, 'userDashboard'])->name('userDashboard');
+
     Route::resource(
         'Product',
         App\Http\Controllers\ProductController::class
@@ -48,5 +51,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::resource(
         'ProductCategory',
         App\Http\Controllers\ProductCategoryController::class
+    );
+
+    Route::resource(
+        'User',
+        App\Http\Controllers\UserController::class
     );
 });

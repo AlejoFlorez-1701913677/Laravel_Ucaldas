@@ -45,4 +45,13 @@ class GeneralController extends Controller
             'Categories' => $ProductCategory,
         ]);
     }
+
+    public function userDashboard()
+    {
+        $Users = User::all();
+
+        return view('Dashboard.User', [
+            'Users' => $Users,
+        ]);
+    }
 }
