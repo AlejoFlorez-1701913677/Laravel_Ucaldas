@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\CarroCreateRequest;
 use App\Http\Requests\CarroUpdateRequest;
 use App\Models\Carro;
 use \Illuminate\Http\Response;
+use App\Http\Controllers\Controller;
 
 class CarroController extends Controller
 {
@@ -29,26 +30,27 @@ class CarroController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Carro $carro)
+    public function show(Carro $Carro)
     {
-        return response()->json(['carro' => $carro], Response::HTTP_OK);
+        $Carro->load('category');
+        return response()->json(['Carro' => $Carro], Response::HTTP_OK);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(CarroUpdateRequest $request, Carro $carro)
+    public function update(CarroUpdateRequest $request, Carro $Carro)
     {
-        $carro->update($request->all());
-        return response()->json(['carro' => $carro], Response::HTTP_OK);
+        $Carro->update($request->all());
+        return response()->json(['Carro' => $Carro], Response::HTTP_OK);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Carro $carro)
+    public function destroy(Carro $Carro)
     {
-        $carro->delete();
+        $Carro->delete();
         return response()->json(null, Response::HTTP_ACCEPTED);
     }
 }

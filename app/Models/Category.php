@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+
+    protected $table = "categories";
+
+    protected $fillable = [
+        'title',
+        'description',
+        'available',
+        'creationDate'
+    ];
+
+    public function carros()
+    {
+        return $this->hasMany(Carro::class);
+    }
 }

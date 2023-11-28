@@ -11,7 +11,7 @@ class CarroCreateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,14 @@ class CarroCreateRequest extends FormRequest
     {
         return [
             'serie' => 'required|numeric',
+            'model' => 'required|string',
+            'manufacturer' => 'required|string',
+            'plate' => 'required|string',
+            'isNew' => 'required',
+            'isWarranted' => 'required',
+            'entryDate' => 'required',
+            'purchaseDate' => 'required',
+            'category_id' => 'required|numeric',
         ];
     }
 }
